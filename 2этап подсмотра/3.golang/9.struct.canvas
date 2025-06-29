@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"f523109e5c280903","type":"text","text":"struct\n","x":3722,"y":987,"width":250,"height":60},
+		{"id":"13b64ac93e31a233","type":"text","text":"В Go нет классов и объектов","x":3722,"y":1140,"width":250,"height":60},
+		{"id":"b44872765bfe6de1","type":"text","text":"Функция возвращает указатель на локальную переменную — это нормально. Go распознает такие ситуации, и выделяет память под структуру в куче (heap) вместо стека (stack), так что структура продолжит существовать после выхода из функции.","x":4240,"y":919,"width":400,"height":197},
+		{"id":"f864fcedcbbe3646","type":"text","text":"Да, порядок полей в структуре Go может иметь значение в некоторых случаях.\n\nВыравнивание памяти: Go размещает поля структур в соответствии с гарантиями выравнивания для типов полей. Это может влиять на общий размер структуры и использование памяти.","x":3703,"y":420,"width":288,"height":338},
+		{"id":"246032e3f7d26989","type":"text","text":"В Go нет наследования. Вместо него активно используется композиция — когда новое поведение собирают из кирпичиков существующего.","x":4342,"y":500,"width":258,"height":212},
+		{"id":"4ecb438f3e9a4de0","x":4398,"y":-40,"width":762,"height":360,"type":"text","text":"```go\ntype Person struct {\n    Name string\n    Age  int\n}\n\nfunc (p Person) SayHello() {\n    fmt.Printf(\"Привет, меня зовут %s, мне %d лет\\n\", p.Name, p.Age)\n}\ntype Employee struct {\n    Person    // встроенное поле\n    Position string\n}\n```"}
+	],
+	"edges":[
+		{"id":"a895dd8ba6624025","fromNode":"f523109e5c280903","fromSide":"bottom","toNode":"13b64ac93e31a233","toSide":"top"},
+		{"id":"76d96388c1cb4bb0","fromNode":"f523109e5c280903","fromSide":"right","toNode":"b44872765bfe6de1","toSide":"left","label":"методы"},
+		{"id":"ea0bd0b54dbb9a2e","fromNode":"f523109e5c280903","fromSide":"top","toNode":"f864fcedcbbe3646","toSide":"bottom","label":"Имеет ли значение порядок полей в структуре?"},
+		{"id":"11a8635bf385d3fc","fromNode":"f523109e5c280903","fromSide":"right","toNode":"246032e3f7d26989","toSide":"left","label":"Наследование/Композиция"},
+		{"id":"50e60d89c79495f5","fromNode":"246032e3f7d26989","fromSide":"top","toNode":"4ecb438f3e9a4de0","toSide":"bottom"}
+	]
+}

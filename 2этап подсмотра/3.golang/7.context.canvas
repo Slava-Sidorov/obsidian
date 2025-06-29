@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"86f600e58a81344b","type":"text","text":"context","x":-173,"y":-172,"width":133,"height":52},
+		{"id":"4df850e342d79447","type":"text","text":"В Go, контекст (context) используется для передачи сигналов относительно отмены операций, таймаутов и передачи метаданных между AP","x":-304,"y":-420,"width":396,"height":133},
+		{"id":"2d1b4e7e4764ca8e","x":-199,"y":-40,"width":186,"height":59,"type":"text","text":"Виды контекста"},
+		{"id":"01348026e7ed5ab8","x":-820,"y":100,"width":250,"height":60,"type":"text","text":"`context.Background()`"},
+		{"id":"3f0129ba93357a6b","x":-570,"y":110,"width":201,"height":50,"type":"text","text":"`context.TODO()`"},
+		{"id":"32831fc3d970edb1","x":-106,"y":100,"width":250,"height":60,"type":"text","text":"`context.WithDeadline()`"},
+		{"id":"fdd7242f65aa2c38","x":-369,"y":110,"width":239,"height":50,"type":"text","text":"`context.WithCancel()`"},
+		{"id":"fe6bc6499cdbc1be","x":144,"y":100,"width":250,"height":60,"type":"text","text":"`context.WithTimeout()`"},
+		{"id":"e35b55ad7bb11692","x":394,"y":100,"width":250,"height":60,"type":"text","text":"`context.WithValue()`"},
+		{"id":"8fe051aac31a77e8","x":-396,"y":-1080,"width":580,"height":460,"type":"text","text":"Отмена операций: Контекст может быть использован для отмены операций. Это особенно полезно, когда у вас есть долгосрочная операция, которая может быть отменена в любой момент. Когда контекст отменяется, все горутины, которые получают этот контекст, получают сигнал об отмене.\n- Таймауты: Контекст также может быть использован для установки таймаутов на операции. Это может быть полезно, когда вы хотите ограничить время выполнения операции.\n- Передача метаданных: Контекст может быть использован для передачи метаданных между API. Это может быть полезно, когда у вас есть информация, которую нужно передать между различными частями вашего приложения, например, информация о трассировке.\n- Контроль над горутинами: Контекст позволяет контролировать выполнение горутин, особенно когда у вас есть множество горутин и вы хотите контролироват"},
+		{"id":"55f6fa9753efc6a8","x":-1300,"y":320,"width":420,"height":197,"type":"text","text":"Это базовый контекст, который обычно используется, когда другой контекст не доступен. Это обычно используется в main функции, в тестах и в пакетах, которые не знают, в каком контексте они будут использоваться. Создается с помощью функции context.Background()."},
+		{"id":"649afe1b7316110e","x":-860,"y":334,"width":412,"height":169,"type":"text","text":"Этот контекст также используется, когда контекст не доступен. Он обычно используется, когда не ясно, какой контекст использовать, или когда контекст будет доступен в будущем. Создается с помощью функции context.TODO()"},
+		{"id":"eaf630f3a37f1ea4","x":-435,"y":313,"width":371,"height":212,"type":"text","text":"Этот контекст предоставляет возможность отмены. Когда функция cancel вызывается, все горутины, которые слушают этот контекст, получают сигнал об отмене. Создается с помощью функции context.WithCancel(parentContext)."},
+		{"id":"1a03a79287a80eaf","x":-40,"y":313,"width":420,"height":307,"type":"text","text":"Эти контексты предоставляют возможность установить время, после которого контекст будет автоматически отменен. WithDeadline принимает конкретное время, после которого контекст будет отменен, а WithTimeout принимает продолжительность времени, после которой контекст будет отменен. Создаются с помощью функций context.WithDeadline(parentContext, deadline) и context.WithTimeout(parentContext, timeout) соответственно."},
+		{"id":"1fe579b2006a85bd","x":394,"y":313,"width":446,"height":190,"type":"text","text":"Этот контекст предоставляет возможность связать значения с контекстом, которые затем могут быть извлечены в другом месте в коде. Создается с помощью функции context.WithValue(parentContext, key, value)."},
+		{"id":"b8bb918d29ea4a9d","x":284,"y":-300,"width":360,"height":260,"type":"text","text":"Контекст в Go устроен как древовидная структура, где каждый контекст может иметь одного родителя и множество дочерних элементов. Когда создается новый контекст с помощью функций WithCancel, WithDeadline, WithTimeout или WithValue, он наследует все свойства своего родительского контекста."},
+		{"id":"f2a8df8b0793dd3e","x":-562,"y":680,"width":626,"height":600,"type":"text","text":"Функция `WithCancel` из пакета `context` в Go создает новый контекст из существующего (родительского) контекста, который может быть отменен. Эта функция возвращает новый контекст и функцию `cancel`, которую можно вызвать, чтобы отменить контекст.\n\nВот как это работает:\n\n```go\nctx, cancel := context.WithCancel(parentCtx)\n```\n\nЗдесь `ctx` - это новый контекст, который наследует все свойства от `parentCtx`, и `cancel` - это функция, которую можно вызвать, чтобы отменить `ctx` и все контексты, производные от `ctx`.\n\nКогда функция `cancel` вызывается, канал `Done` контекста `ctx` закрывается. Все горутины, которые слушают канал `Done`, могут проверить его закрытие, чтобы узнать, был ли контекст отменен.\n\nВажно всегда вызывать `cancel` в defer (или когда контекст больше не нужен), чтобы освободить ресурсы, связанные с контекстом. Если `cancel` не вызывается, то может произойти утечка ресурсов.\n\n```go\ndefer cancel() // Make sure to cancel when done with context\n"}
+	],
+	"edges":[
+		{"id":"443280cc39ace267","fromNode":"86f600e58a81344b","fromSide":"top","toNode":"4df850e342d79447","toSide":"bottom"},
+		{"id":"9a99a017056c4a3a","fromNode":"86f600e58a81344b","fromSide":"bottom","toNode":"2d1b4e7e4764ca8e","toSide":"top"},
+		{"id":"3d7368999ee4afdd","fromNode":"2d1b4e7e4764ca8e","fromSide":"left","toNode":"01348026e7ed5ab8","toSide":"top"},
+		{"id":"402dea243c04e689","fromNode":"2d1b4e7e4764ca8e","fromSide":"bottom","toNode":"fdd7242f65aa2c38","toSide":"top"},
+		{"id":"d922229de44c56f6","fromNode":"2d1b4e7e4764ca8e","fromSide":"bottom","toNode":"32831fc3d970edb1","toSide":"top"},
+		{"id":"056864b49052ee9d","fromNode":"2d1b4e7e4764ca8e","fromSide":"right","toNode":"fe6bc6499cdbc1be","toSide":"top"},
+		{"id":"61229c1ce1111e41","fromNode":"2d1b4e7e4764ca8e","fromSide":"right","toNode":"e35b55ad7bb11692","toSide":"top"},
+		{"id":"a873ff9713fabd08","fromNode":"2d1b4e7e4764ca8e","fromSide":"left","toNode":"3f0129ba93357a6b","toSide":"top"},
+		{"id":"6a31413c0164ae9e","fromNode":"4df850e342d79447","fromSide":"top","toNode":"8fe051aac31a77e8","toSide":"bottom","label":"для чего используется"},
+		{"id":"e59a73b8c8327e60","fromNode":"01348026e7ed5ab8","fromSide":"bottom","toNode":"55f6fa9753efc6a8","toSide":"top"},
+		{"id":"9c830ba887b1aeea","fromNode":"3f0129ba93357a6b","fromSide":"bottom","toNode":"649afe1b7316110e","toSide":"top"},
+		{"id":"61c1384db3dcca2b","fromNode":"fdd7242f65aa2c38","fromSide":"bottom","toNode":"eaf630f3a37f1ea4","toSide":"top"},
+		{"id":"3d944ec9e7448312","fromNode":"32831fc3d970edb1","fromSide":"bottom","toNode":"1a03a79287a80eaf","toSide":"top"},
+		{"id":"853d2653c27e5c11","fromNode":"fe6bc6499cdbc1be","fromSide":"bottom","toNode":"1a03a79287a80eaf","toSide":"top"},
+		{"id":"64a82d8c83049a11","fromNode":"e35b55ad7bb11692","fromSide":"bottom","toNode":"1fe579b2006a85bd","toSide":"top"},
+		{"id":"8cb8774cadfa499a","fromNode":"86f600e58a81344b","fromSide":"right","toNode":"b8bb918d29ea4a9d","toSide":"left","label":"под капотом"},
+		{"id":"06bc5d3b68ee8042","fromNode":"eaf630f3a37f1ea4","fromSide":"bottom","toNode":"f2a8df8b0793dd3e","toSide":"top","label":"Как работает WithCancel?"}
+	]
+}

@@ -1,0 +1,35 @@
+{
+	"nodes":[
+		{"id":"70e637f523586191","type":"text","text":"## NoSQL","x":-125,"y":-30,"width":250,"height":60},
+		{"id":"4d80db03574fc1b3","type":"text","text":"Сразу проектируется под горизонтальное маштабирование(как горизонтальный шардинг в SQL DB, но настроеный от производителя)\n\nИмеет свой:\n- Coordinator Routing\n- решардинг\n- репликации(master-slave)","x":-202,"y":140,"width":405,"height":300},
+		{"id":"7fc4d23fa2d46c21","type":"text","text":"- Не имеют чёткой структуры \n- Нет внешних ключей(нет JOIN/дублирование данных)\n-  Нет SQL, у каждой программе свой язык","x":-250,"y":-240,"width":500,"height":120},
+		{"id":"af121a115ad0099d","type":"text","text":"Basically Available - базовая доступность","x":740,"y":-150,"width":250,"height":60},
+		{"id":"057fd25c511078eb","type":"text","text":"Soft-state - мягкое состояние","x":740,"y":-52,"width":250,"height":102},
+		{"id":"ef276c00411874c9","type":"text","text":"Отказо устойчивость(копии)","x":1127,"y":-150,"width":250,"height":60},
+		{"id":"4007cc755e8f6084","type":"text","text":"данные не всегда согласованы","x":1127,"y":-30,"width":250,"height":60},
+		{"id":"0325d48cd9e2ed3c","type":"text","text":"**Eventually Consistent** - непротиворечие в конечном итоге","x":740,"y":80,"width":250,"height":124},
+		{"id":"7ca4c34a239d50f9","type":"text","text":" В конченом итоге данные придут в согласованое состояние","x":1127,"y":93,"width":250,"height":98},
+		{"id":"edcb40505cb10107","type":"text","text":"Данные на репликах в моменте могут не соответсвовать master, что может привести к неполному чтению со slave.\n","x":1060,"y":260,"width":385,"height":135},
+		{"id":"98e9d9d05a42c4d1","type":"file","file":"image/Chek_mark.png","x":684,"y":150,"width":56,"height":54},
+		{"id":"516a610ae7491576","type":"file","file":"image/cross.png","x":684,"y":230,"width":57,"height":60},
+		{"id":"49c98658bfce38e6","type":"text","text":"### Consistency","x":741,"y":230,"width":250,"height":60},
+		{"id":"b09c42ac6f0a0eca","type":"text","text":"Нет согласованости данных, как в SQL ACID => нет ACID транзакций.\n","x":606,"y":348,"width":385,"height":95},
+		{"id":"4a94eaf168d79bb2","type":"text","text":"Зачастую создаются  под конкретные задачи","x":-600,"y":-30,"width":250,"height":60},
+		{"id":"f6f6b1605d860914","type":"text","text":"BASE - принцип проектирования распределенных систем хранения данных(гарантии)","x":250,"y":-44,"width":390,"height":88}
+	],
+	"edges":[
+		{"id":"9a52b57ae8f4f3cb","fromNode":"70e637f523586191","fromSide":"top","toNode":"7fc4d23fa2d46c21","toSide":"bottom"},
+		{"id":"4bc304f3b26e18ac","fromNode":"70e637f523586191","fromSide":"bottom","toNode":"4d80db03574fc1b3","toSide":"top"},
+		{"id":"cea62887a518c98b","fromNode":"70e637f523586191","fromSide":"right","toNode":"f6f6b1605d860914","toSide":"left"},
+		{"id":"d98d9952d9c82228","fromNode":"057fd25c511078eb","fromSide":"right","toNode":"4007cc755e8f6084","toSide":"left"},
+		{"id":"0df240278513f014","fromNode":"af121a115ad0099d","fromSide":"right","toNode":"ef276c00411874c9","toSide":"left"},
+		{"id":"02bb5f7424d0b5ae","fromNode":"0325d48cd9e2ed3c","fromSide":"right","toNode":"7ca4c34a239d50f9","toSide":"left"},
+		{"id":"b0edf9caf9223345","fromNode":"f6f6b1605d860914","fromSide":"right","toNode":"af121a115ad0099d","toSide":"left"},
+		{"id":"0c000d4d4684c9c3","fromNode":"f6f6b1605d860914","fromSide":"right","toNode":"057fd25c511078eb","toSide":"left"},
+		{"id":"1db7a03d674dce9f","fromNode":"f6f6b1605d860914","fromSide":"right","toNode":"0325d48cd9e2ed3c","toSide":"left"},
+		{"id":"f4bc94b6e43b007e","fromNode":"7ca4c34a239d50f9","fromSide":"bottom","toNode":"edcb40505cb10107","toSide":"top"},
+		{"id":"a159cf14f6f00875","fromNode":"49c98658bfce38e6","fromSide":"bottom","toNode":"b09c42ac6f0a0eca","toSide":"top"},
+		{"id":"473dcafc10a43e49","fromNode":"70e637f523586191","fromSide":"left","toNode":"4a94eaf168d79bb2","toSide":"right"},
+		{"id":"82a74ff4b7d9c440","fromNode":"b09c42ac6f0a0eca","fromSide":"right","toNode":"edcb40505cb10107","toSide":"left"}
+	]
+}

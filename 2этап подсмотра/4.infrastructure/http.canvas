@@ -1,0 +1,37 @@
+{
+	"nodes":[
+		{"id":"cff0329cc1f5d5fe","type":"text","text":"http","x":-77,"y":-78,"width":97,"height":58},
+		{"id":"f6309dc30f2ee6fa","type":"text","text":"HTTP означает «протокол передачи гипертекста» (или HyperText Transfer Protocol). Он представляет собой список правил, по которым компьютеры обмениваются данными в интернете. HTTP умеет передавать все возможные форматы файлов — например, видео, аудио, текст. Но при этом состоит только из текста.","x":-208,"y":-460,"width":360,"height":263},
+		{"id":"13eb82819659e011","type":"text","text":"HTTPS","x":180,"y":-74,"width":121,"height":50},
+		{"id":"04f8b0880d5d9d85","type":"text","text":"Аббревиатура расшифровывается как «защищённый протокол передачи гипертекста» (или HyperText Transfer Protocol Secure). Он нужен для безопасной передачи данных по Сети. Всё происходит по тем же принципам, как и у HTTP, правда, перед отправкой данные дополнительно [шифруются](https://skillbox.ru/media/code/kak-internet-zashchishchaet-informatsiyu-i-pochemu-etu-zashchitu-skoro-razrushat-kvantovye-kompyuter/?utm_source=media&utm_medium=link&utm_campaign=all_all_media_links_links_articles_all_all_skillbox), а затем расшифровываются на сервере.","x":71,"y":100,"width":340,"height":300},
+		{"id":"f8c716574f3a1540","type":"file","file":"image/Pasted image 20250106150724.png","x":-608,"y":-100,"width":400,"height":102},
+		{"id":"0c610e2daa7b513d","type":"file","file":"image/Pasted image 20250106150738.png","x":520,"y":-132,"width":400,"height":166},
+		{"id":"c716ea26dfa31a63","type":"text","text":"Состоит из запроса и ответа req and resp\n","x":-458,"y":200,"width":250,"height":80},
+		{"id":"de45b772719f1c6a","type":"file","file":"image/Pasted image 20250106150914.png","x":-1008,"y":440,"width":400,"height":240},
+		{"id":"21ed20eb13bfc368","type":"file","file":"image/Pasted image 20250106150938.png","x":-380,"y":490,"width":400,"height":190},
+		{"id":"f14f97eeb13809b1","type":"text","text":"- HTTP-запрос содержит четыре элемента: метод, URI, версию HTTP и адрес хоста. Метод указывает, какое действие нужно совершить. URI — это путь до конкретного файла на сайте. Версию HTTP нужно указывать, чтобы избежать ошибок, а адрес хоста помогает браузеру определить, куда отправлять HTTP-запрос.","x":-1040,"y":868,"width":422,"height":232},
+		{"id":"1a6134c2098e37ef","type":"text","text":"- HTTP-ответ имеет три части: статус ответа, заголовки и тело ответа. В статусе ответа сообщается, всё ли прошло успешно и возникли ли ошибки. В заголовках указывается дополнительная информация, которая помогает браузеру корректно отобразить файл. А в тело ответа сервер кладёт запрашиваемый файл.","x":-300,"y":820,"width":453,"height":224},
+		{"id":"cd3e700e73b856e9","type":"text","text":"### **HTTP/1.0**\n\n- **Одно соединение — один запрос**: Для каждого запроса создаётся новое TCP-соединение.\n- **Ограниченные заголовки**: Не поддерживает некоторые современные заголовки и механизмы управления кэшем.\n- **Без персистентных соединений**: После получения ответа соединение закрывается","x":71,"y":-900,"width":436,"height":319},
+		{"id":"550dbf01139aa986","type":"text","text":"### **HTTP/1.1**\n\n- **Персистентные соединения**: Одно TCP-соединение может использоваться для нескольких запросов (keep-alive).\n- **Пайплайнинг (неэффективно)**: Возможность отправить несколько запросов без ожидания ответа, но часто возникают блокировки (head-of-line blocking).\n- **Улучшения кэширования**: Поддержка `Cache-Control`, `ETag` и других механизмов.\n- **Частичное скачивание**: Поддерживает заголовок `Range` для загрузки частей ресурса.\n- **Дополнительные методы**: Например, `PUT`, `PATCH`, `OPTIONS`.","x":560,"y":-1021,"width":479,"height":440},
+		{"id":"39089a91d04ac855","type":"text","text":"### **HTTP/2**\n\n- **Бинарный протокол**: В отличие от текстовых HTTP/1.x, HTTP/2 использует бинарный формат, что снижает задержки и ошибки парсинга.\n- **Мультиплексирование**: Несколько запросов/ответов могут передаваться одновременно через одно соединение, устраняя блокировки.\n- **Сжатие заголовков (HPACK)**: Уменьшает объём передаваемых данных, особенно полезно для повторяющихся заголовков.\n- **Приоритет и потоки**: Позволяет серверу определить приоритет запросов.\n- **Push-уведомления**: Сервер может отправлять данные клиенту без явного запроса (Server Push).","x":1140,"y":-1021,"width":540,"height":440},
+		{"id":"79278afd100d07b6","type":"text","text":"**Главное отличие**:\n\n- HTTP/1.0 создаёт новые соединения для каждого запроса.\n- HTTP/1.1 оптимизирует использование одного соединения, но с ограничениями.\n- HTTP/2 делает передачу данных более эффективной через мультиплексирование, сжатие и улучшенную работу с заголовками.","x":1320,"y":-496,"width":360,"height":335},
+		{"id":"e4d413958b8308aa","type":"text","text":"Есть 3 типа","x":382,"y":-328,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"d50173ecc1d12d5e","fromNode":"cff0329cc1f5d5fe","fromSide":"top","toNode":"f6309dc30f2ee6fa","toSide":"bottom","label":"пояснение"},
+		{"id":"b22d2c9f0ec7adc4","fromNode":"cff0329cc1f5d5fe","fromSide":"right","toNode":"13eb82819659e011","toSide":"left","fromEnd":"arrow"},
+		{"id":"031148a5f268cf96","fromNode":"13eb82819659e011","fromSide":"bottom","toNode":"04f8b0880d5d9d85","toSide":"top","label":"пояснение"},
+		{"id":"148e48740170f4b2","fromNode":"cff0329cc1f5d5fe","fromSide":"left","toNode":"f8c716574f3a1540","toSide":"right"},
+		{"id":"a2d6a203f8bfded6","fromNode":"13eb82819659e011","fromSide":"right","toNode":"0c610e2daa7b513d","toSide":"left"},
+		{"id":"356c469e76c2cc73","fromNode":"cff0329cc1f5d5fe","fromSide":"bottom","toNode":"c716ea26dfa31a63","toSide":"top"},
+		{"id":"0395efabeaaf9667","fromNode":"c716ea26dfa31a63","fromSide":"bottom","toNode":"de45b772719f1c6a","toSide":"top","label":"запрос"},
+		{"id":"d4ea89e0ae380bd1","fromNode":"c716ea26dfa31a63","fromSide":"bottom","toNode":"21ed20eb13bfc368","toSide":"top","label":"ответ"},
+		{"id":"dc3921c156aa9932","fromNode":"de45b772719f1c6a","fromSide":"bottom","toNode":"f14f97eeb13809b1","toSide":"top"},
+		{"id":"d428aa58497fc713","fromNode":"21ed20eb13bfc368","fromSide":"bottom","toNode":"1a6134c2098e37ef","toSide":"top"},
+		{"id":"37b2c101927fad49","fromNode":"cff0329cc1f5d5fe","fromSide":"top","toNode":"e4d413958b8308aa","toSide":"bottom","label":"типы"},
+		{"id":"f8027b6837a63b2a","fromNode":"e4d413958b8308aa","fromSide":"top","toNode":"cd3e700e73b856e9","toSide":"bottom"},
+		{"id":"2eea0478241b5809","fromNode":"e4d413958b8308aa","fromSide":"top","toNode":"550dbf01139aa986","toSide":"bottom"},
+		{"id":"23694e86a4ca219a","fromNode":"e4d413958b8308aa","fromSide":"top","toNode":"39089a91d04ac855","toSide":"bottom"},
+		{"id":"4e87d790911b0801","fromNode":"e4d413958b8308aa","fromSide":"right","toNode":"79278afd100d07b6","toSide":"left","label":"коротко о различиях"}
+	]
+}
