@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2этап подсмотра/1.легенда/Подробное ебание.md",
+                "file": "2этап подсмотра/1.легенда/2. Вопросы на подробнее.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Подробное ебание"
+              "title": "2. Вопросы на подробнее"
             }
           }
         ]
@@ -166,7 +166,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 313.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,8 +182,9 @@
   },
   "active": "12612faf34a6951d",
   "lastOpenFiles": [
+    "2этап подсмотра/1.легенда/1. Подробнее.md",
+    "2этап подсмотра/1.легенда/2. Вопросы на подробнее.md",
     "2этап подсмотра/1.легенда/Легенда.md",
-    "2этап подсмотра/1.легенда/Подробное ебание.md",
     "2этап подсмотра/4.infrastructure/SQL/redis.md",
     "redis_1.md",
     "2этап подсмотра/4.infrastructure/SQL/SQL.md",
@@ -224,7 +226,6 @@
     "2этап подсмотра/4.infrastructure/Брокеры сообщений/overall.md",
     "2этап подсмотра/4.infrastructure/Брокеры сообщений/Kafka и RabbitMQ.md",
     "2этап подсмотра/4.infrastructure/Брокеры сообщений/kafka.canvas",
-    "2этап подсмотра/4.infrastructure/Брокеры сообщений/kafka.md",
     "2этап подсмотра/4.infrastructure/git",
     "2этап подсмотра/4.infrastructure/Docker_k8s/k8s.canvas",
     "2этап подсмотра/4.infrastructure/Docker_k8s",
