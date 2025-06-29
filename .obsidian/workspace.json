@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2этап подсмотра/1.легенда/Легенда.md",
+                "file": "2этап подсмотра/1.легенда/Подробное ебание.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Легенда"
+              "title": "Подробное ебание"
             }
           }
         ]
@@ -150,13 +150,23 @@
               "icon": "lucide-list",
               "title": "Структура sql"
             }
+          },
+          {
+            "id": "a7fc425c89599e14",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 313.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -165,13 +175,14 @@
       "canvas:Создать новый холст": false,
       "daily-notes:Сегодняшняя заметка": false,
       "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false
+      "command-palette:Открыть палитру команд": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "12612faf34a6951d",
   "lastOpenFiles": [
-    "2этап подсмотра/1.легенда/Подробное ебание.md",
     "2этап подсмотра/1.легенда/Легенда.md",
+    "2этап подсмотра/1.легенда/Подробное ебание.md",
     "2этап подсмотра/4.infrastructure/SQL/redis.md",
     "redis_1.md",
     "2этап подсмотра/4.infrastructure/SQL/SQL.md",
